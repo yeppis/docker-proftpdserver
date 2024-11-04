@@ -15,7 +15,7 @@ services:
   web:
     image: nginx:alpine
     ports:
-      - "80:80"
+      - "2080:2080"
     volumes:
       - ./beta-patch:/data
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
@@ -25,7 +25,7 @@ services:
       - traefik.enable=true
       - traefik.http.routers.beta-patch.rule=Host(`patch.novasaga.xyz`)
       - traefik.http.routers.beta-patch.entrypoints=web
-      - traefik.http.services.beta-patch.loadbalancer.server.port=80
+      - traefik.http.services.beta-patch.loadbalancer.server.port=2080
 volumes:
   beta-patch:
   
