@@ -6,12 +6,13 @@ services:
     environment:
       FTP_LIST: "novapatch:M74ss4RilS4Y5"
     ports:
-      - "2021:21"
+      - "21:21"
     volumes:
       - ./beta-patch:/data
       - ./proftpd.conf:/etc/proftpd/proftpd.conf
     networks:
       - dokploy-network
+    restart: always
   web:
     image: nginx:alpine
     ports:
