@@ -10,7 +10,6 @@ services:
     volumes:
       - ./beta-patch:/data
       - ./proftpd.conf:/etc/proftpd/proftpd.conf
-    hostname: ftpserver
     networks:
       - dokploy-network
   web:
